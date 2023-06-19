@@ -11,5 +11,17 @@
             <label for="city">Ville : </label><input type="text" name="city" id="city"/>
             <button  name="submit" id="submit">Valider</button>
         </form>
+        <script>
+
+            document.querySelector('form').addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                let lName = document.querySelector('#lastname').value;
+                let fName = document.querySelector('#firstname').value;
+                let city = document.querySelector('#city').value;
+
+                alert(`Prénom: ${fName}\nNom : ${lName}\nVille : ${city}`);
+            });
+        </script>
     </body>
 </html>

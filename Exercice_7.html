@@ -10,5 +10,32 @@
             <label for="yearOfBirth">Année de naissance : </label><input type="text" id="yearOfBirth" name="yearOfBirth"/><br/>
             <button id="submit" name="submit">Valider</button>
         </form>
+        <script>
+            /* ** Fait un calcul bizarre et retourne le résultat.
+            *
+            * @param Int sz La pointure de la victime.
+            * @param Int yob L'année de naissance de la victime.
+            *
+            * @return Int Le résultat.
+            */
+            function what(sz, yob) {
+                let r = sz * 2;
+                r += 5;
+                r *= 50;
+                r -= yob;
+                r += 1766;
+
+                return r;
+            }
+
+            document.querySelector('form').addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                let sz = parseInt(document.querySelector('#shoeSize').value);
+                let yob = parseInt(document.querySelector('#yearOfBirth').value);
+
+                alert(what(sz, yob));
+            });
+        </script>
     </body>
 </html>

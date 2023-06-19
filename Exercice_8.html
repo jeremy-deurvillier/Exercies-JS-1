@@ -9,5 +9,17 @@
             <label for="age">Votre âge : </label><input type="text" id="age" name="age"/><br/>
             <button id="submit" name="submit">Valider</button>
         </form>
+        <script>
+            document.querySelector('form').addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                let userAge = parseInt(document.querySelector('#age').value, 10);
+                let text = 'Vous êtes mineur';
+
+                if (userAge >= 18) text = 'Vous êtes majeur';
+
+                alert(text);
+            });
+        </script>
     </body>
 </html>
